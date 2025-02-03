@@ -1,0 +1,59 @@
+    <!DOCTYPE html>
+    <html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restoran Menü</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body>
+        <div id="customer-view" class="view">
+            <header>
+                <a href="index.html">
+                    <img class="logo-image" src="images/Gül__1_-removebg-preview.png" alt="#">
+                </a>
+                <div id="table-info">
+                    
+                        <span>Masa No: </span>
+                        <span id="table-number">1</span> <!-- Masa numarası -->
+                    
+                </div>
+            </header>
+
+            <nav class="menu-tabs">
+                <button class="tab-btn active" data-category="kebab">Dönerler</button>
+                <button class="tab-btn" data-category="rice">Pilavlar</button>
+                <button class="tab-btn" data-category="toast">Tost & Sandviç</button>
+                <button class="tab-btn" data-category="meatball">Çiğ Köfte</button>
+                <button class="tab-btn" data-category="drinks">İçecekler</button>
+            </nav>
+
+            <div class="menu-content">
+                <div id="kebab" class="menu-section active"></div>
+                <div id="rice" class="menu-section"></div>
+                <div id="toast" class="menu-section"></div>
+                <div id="meatball" class="menu-section"></div>
+                <div id="drinks" class="menu-section"></div>
+            </div>
+
+            <div class="order-summary">
+                <h2>Sipariş Özeti</h2>
+                <div id="order-items"></div>
+                <button id="clear-cart" onclick="clearCart()">
+                    <i class="fas fa-trash"></i> Sepeti Temizle
+                </button>
+                <div class="total">
+                    <strong>Toplam:</strong>
+                    <span id="total-amount">0.00 TL</span>
+                </div>
+                <button id="submit-order">Siparişi Onayla</button>
+            </div>
+        </div>
+
+        <script src="menu.js"></script>
+        <script src="customer.js"></script>
+        <script src="toggleMenu.js"></script>
+    
+    </body>
+    </html>

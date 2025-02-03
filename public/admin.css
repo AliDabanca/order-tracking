@@ -1,0 +1,176 @@
+.admin-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.active-orders, .tables-status {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.order-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+#tables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.table-card {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.table-card.occupied {
+    background: #ffebee;
+    cursor: pointer;
+}
+
+.table-card.active {
+    background: #674515;
+    cursor: pointer;
+}
+
+#admin-view img{
+    mix-blend-mode: multiply;
+    height: 175px;
+    margin-top: -55px;
+    margin-bottom: -65px;
+
+}
+
+.logout-btn-fixed {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.logout-btn-fixed:hover {
+    background-color: #c82333;
+}
+
+/* Genel Buton Stili */
+.order-card button {
+    background-color: #674515; /* Sarı arka plan */
+    color: #ffffff; /* Yazı rengi */
+    border: none; /* Kenarlık kaldır */
+    border-radius: 15px; /* Köşeleri yuvarlat */
+    padding: 10px 15px; /* İç boşluk */
+    font-size: 14px; /* Yazı boyutu */
+    cursor: pointer; /* İmleci buton göstergesine çevir */
+    margin-top: 10px; /* Üstten boşluk */
+    transition: background-color 0.3s ease; /* Hover efekti geçişi */
+}
+
+/* Buton Üzerine Gelindiğinde */
+.order-card button:hover {
+    background-color: white;
+    color: #674515;; /* Daha koyu sarı */
+}
+
+/* Butona Tıklanırken */
+.order-card button:active {
+    background-color: #674515; /* Daha koyu sarı */
+    transform: scale(0.95); /* Hafif küçülme efekti */
+}
+
+/* Mobil Uyumluluk için Media Sorguları */
+
+/* Küçük ekranlar (Telefonlar) */
+@media (max-width: 768px) {
+    .admin-container {
+        grid-template-columns: 1fr; /* Tek sütun düzeni */
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .active-orders, .tables-status {
+        padding: 0.8rem;
+    }
+
+    #orders-list {
+        gap: 0.5rem;
+    }
+
+    .order-card {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    #tables-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 sütun düzeni */
+        gap: 0.5rem;
+    }
+
+    .table-card {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .logout-btn-fixed {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    #admin-view img {
+        height: 120px;
+        margin-top: -30px;
+        margin-bottom: -40px;
+    }
+}
+
+/* Çok küçük ekranlar (Dar telefonlar) */
+@media (max-width: 480px) {
+    #tables-grid {
+        grid-template-columns: 1fr; /* Tek sütun düzeni */
+    }
+
+    .admin-container {
+        padding: 0.5rem;
+    }
+
+    .active-orders h2,
+    .tables-status h2 {
+        font-size: 1rem;
+    }
+
+    .logout-btn-fixed {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}

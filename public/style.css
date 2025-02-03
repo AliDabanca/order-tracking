@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url(images/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Landing Page Styles */
+.landing-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.landing-page img {
+    mix-blend-mode: multiply;
+    height: 175px;
+    margin-top: -55px;
+    margin-bottom: -45px;
+}
+
+
+.table-selection {
+    background: rgba(150, 99, 33, 0.784);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    width: 55%;
+    margin: 0 auto;
+}
+
+.tables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.table-button {
+    padding: 1rem;
+    border: none;
+    background: #4f3006;
+    color: white;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.table-button:hover {
+    background: black;
+}
+
+.admin-link {
+    margin-top: 2rem;
+}
+
+.admin-link a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1rem; /* Buton benzeri bir alan ekliyoruz */
+    border: 2px solid #6d6969; /* Çerçeve ekliyoruz */
+    border-radius: 24px; /* Kenarları yuvarlıyoruz */
+    transition: all 0.3s ease; /* Geçiş efekti */
+    background-color: #4f3006;
+}
+
+.admin-link a:hover {
+    background-color: #6d6969; /* Hover durumunda arka plan rengi değişir */
+    color: black; /* Yazı rengi beyaz olur */
+    border-color: #4e4848; /* Çerçeve rengi biraz daha koyulaşır */
+}
+
+
+/* Existing styles... */
+header {
+    background-color: #4f3006;
+    padding: 1rem;
+    text-align: center;
+}
+
+#customer-view .logo-image{
+    mix-blend-mode: multiply;
+    height: 175px;
+    margin-top: -55px;
+    margin-bottom: -65px;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #674515;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tab-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+.tab-btn.active {
+    background-color: #333;
+    color: white;
+}
+
+.menu-content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-section {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.menu-section.active {
+    display: grid;
+}
+
+.menu-item {
+    background: #674515;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-item button {
+    width: 50%;
+    padding: 0.5rem;
+    background-color: #4f3006;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+.menu-item button:hover {
+    background-color: white;
+    color:#4f3006 ;
+}
+
+
+.menu-item img.menu-image {
+    display: block;
+    width: 230px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+.order-summary {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 700px; 
+    background-color: #4f3006;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow-y: auto;
+    display: none; /* İlk başta gizli */
+    padding: 20px;
+    margin-top: 50px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+#order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+#submit-order {
+    width: 100%;
+    padding: 1rem;
+    background-color: #674515;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+#submit-order:hover {
+    background-color: #4f3006;
+}
+
+#table-info {
+    position: absolute;
+    top: 1rem;
+    right: unset; /* sağ konumlandırmayı kaldır */
+    left: 1rem; /* sol konumlandırmayı ekle */
+    float: left;
+    background-color: black;
+    padding: 0.55rem 0.01rem;
+    color: white;
+    margin-top: 9px;
+    color: #6d6969;
+    text-decoration: none;
+    padding: 0.8rem 2rem; /* Buton benzeri bir alan ekliyoruz */
+    border-radius: 15px; /* Kenarları yuvarlıyoruz */
+    font-weight: bold; /*yazı tipi kalın */
+    transition: all 0.3s ease; /* Geçiş efekti */
+}
+
+#toggle-order-summary {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #4f3006;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1100;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    
+}
+
+.cart-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ffc107;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-content {
+    margin-bottom: 50px; /* Menü içeriği ve sipariş özeti arasında boşluk */
+}
+
+/* === Mobil Görünüm (Telefonlar) === */
+@media (max-width: 768px) {
+    .tables-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 sütunlu grid düzeni */
+        gap: 0.5rem; /* Boşluklar küçültüldü */
+    }
+
+    .table-button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+        border-radius: 12px;
+    }
+
+    .table-selection {
+        width: 90%; /* Daha fazla genişlik kaplasın */
+        padding: 1rem;
+    }
+
+    .admin-link a {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .menu-tabs {
+        flex-wrap: wrap; /* Menü sekmeleri alt alta geçebilir */
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .menu-item img.menu-image {
+        width: 100%;
+        height: 120px;
+    }
+
+    .menu-item button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+      /* Sepet Butonu (Aç/Kapa Butonu) */
+      .cart-toggle-btn {
+        position: fixed;
+        bottom: 20px; /* Ekranın alt kısmına sabitlendi */
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        z-index: 1100;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Sipariş Özeti (Mobil Görünümde Tam Ekran) */
+    .order-summary {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 50%;
+        background-color: #4f3006;
+        z-index: 1001;
+        overflow-y: auto;
+        display: none; /* İlk başta kapalı */
+        padding: 1rem;
+    }
+
+    .order-summary.active {
+        display: block; /* Açıldığında görünür hale gelir */
+    }
+
+    /* Siparişi Onayla Butonu */
+    #submit-order {
+        position: relative;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        font-size: 1rem;
+        padding: 0.8rem;
+        border-radius: 8px;
+    }
+
+    .total {
+        margin-bottom: 3rem;
+    }
+
+    #table-info {
+        font-size: 17px;  /* Küçük ekranlar için daha küçük font boyutu */
+        padding: 8px 12px; /* Küçük ekranlar için butonun etrafındaki boşlukları azaltıyoruz */
+    }
+    
+    #table-number {
+        font-size: 17px;  /* Küçük ekranlarda masa numarasını daha da küçültüyoruz */
+    }
+    
+    
+}
+
+.order-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 8px;
+}
+
+.order-item-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.item-name {
+    flex: 1;
+    font-weight: 500;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f5f5;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+.quantity-btn {
+    background: #674515;
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+    background: #8B5E34;
+}
+
+.quantity {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.item-price {
+    font-weight: 500;
+    min-width: 80px;
+    text-align: right;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff4444;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.3s;
+}
+
+.delete-btn:hover {
+    color: #cc0000;
+}
+
+#clear-cart {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: none;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#clear-cart:hover {
+    background: #cc0000;
+}
+
+/* Sepet boş mesajı */
+.empty-cart {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetici Paneli</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+
+    <!-- Firebase Auth Kontrolü -->
+    <script type="module">
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9f598gvyWdfH8b0mFO90LiKktdZ9WcUE",
+            authDomain: "loginpage-6621d.firebaseapp.com",
+            projectId: "loginpage-6621d",
+            storageBucket: "loginpage-6621d.firebasestorage.app",
+            messagingSenderId: "740215161929",
+            appId: "1:740215161929:web:e4bf9cdf880b0afcbc6b98"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = 'admin-login-screen.html';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="admin-view" class="view">
+        <header>
+            <a href="index.html"><img src="images/Gül__1_-removebg-preview.png" alt=""></a>
+        </header>
+
+        <div class="admin-container">
+            <div class="active-orders">
+                <h2>Aktif Siparişler</h2>
+                <div id="orders-list"></div>
+            </div>
+
+            <div class="tables-status">
+                <h2>Masa Durumları</h2>
+                <div id="tables-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <button id="logoutButton" class="logout-btn-fixed">
+        <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+    </button>
+
+    <script src="menu.js"></script>
+    <script src="admin.js"></script>
+
+    <!-- Çıkış İşlemi İçin Script -->
+    <script type="module">
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+
+        document.getElementById('logoutButton').addEventListener('click', () => {
+            const auth = getAuth();
+            signOut(auth).then(() => {
+                console.log("Çıkış yapıldı");
+                window.location.href = 'admin-login-screen.html';
+            }).catch((error) => {
+                console.error('Çıkış yapılırken hata oluştu:', error);
+            });
+        });
+    </script>
+</body>
+</html>

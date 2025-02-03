@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Giriş Ekranı</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="admin-login.css">
+    <script type="module" src="firebaseauth.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+        <a href="index.html"><img src="images/Gül__1_-removebg-preview.png" alt=""></a>
+    </div>
+</header>
+  <div class="container" id="signup" style="display:none;">
+      <h1 class="form-title">Kayıt Ol</h1>
+      <form method="post" action="">
+        <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+        <div class="input-group">
+           <i class="fas fa-user"></i>
+           <input type="text"  id="fName" placeholder="First Name" required>
+           <label for="fname">İsim</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text"  id="lName" placeholder="Last Name" required>
+            <label for="lName">Soyisim</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email"  id="rEmail" placeholder="Email" required>
+            <label for="rEmail">Email</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="rPassword"  placeholder="Password" required>
+            <label for="rPassword">Şifre</label>
+        </div>
+        <button type="button" class="btn" id="submitSignUp">Kayıt Ol</button>
+
+      </form>
+    
+      <div class="links">
+        <p>Zaten hesabınız var mı ?</p>
+        <button id="signInButton">Giriş Yap</button>
+      </div>
+    </div>
+
+  <div class="container" id="signIn">
+        <h1 class="form-title">Giriş Yap</h1>
+        <form method="post" action="">
+          <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+
+          <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email"  id="email" placeholder="Email" required>
+              <label for="email">Email</label>
+          </div>
+          <div class="input-group">
+              <i class="fas fa-lock"></i>
+            <input type="password" id="password"  placeholder="Password" required>
+              <label for="password">Şifre</label>
+          </div>
+          <p class="recover">
+            <a href="#">Beni Hatırla</a>
+          </p>
+         <button  class="btn"  id="submitSignIn">Giriş Yap</button>
+        </form>
+       
+        <div class="links">
+          <p>Hesabınız yok mu?</p>
+          <button id="signUpButton">Kayıt Ol</button>
+        </div>
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>
