@@ -25,5 +25,4 @@ Bu proje, küçük ve orta ölçekli restoranlar için geliştirilmiş temel bir
 
 
 Sitenin arayüzüne bu linkten ulaşabilirsiniz: https://qrcodemenu-d2fbe.web.app
-Daha gelişmiş özellikler (kullanıcı yetkilendirme, veritabanı entegrasyonu, gerçek zamanlı çoklu kullanıcı desteği vb.) gelecekte eklenebilir.
 
