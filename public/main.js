@@ -9,7 +9,7 @@ import { getFirestore, doc, setDoc, getDoc, collection, addDoc, getDocs } from "
 
 // Firebase Config
 const firebaseConfig = {
-  apiKey: "AIzaSyCswpNttnouhwxPIckJ8Ghtz-ad1v9yPg8",
+  apiKey: " ", //API Key'inizi buraya yazın.
   authDomain: "qrmenu-e6f00.firebaseapp.com",
   projectId: "qrmenu-e6f00",
   storageBucket: "qrmenu-e6f00.firebasestorage.app",
