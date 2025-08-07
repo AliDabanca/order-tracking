@@ -25,7 +25,7 @@
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyC9f598gvyWdfH8b0mFO90LiKktdZ9WcUE",
+    apiKey: " ", -//API Key'inizi buraya yazın.
     authDomain: "loginpage-6621d.firebaseapp.com",
     projectId: "loginpage-6621d",
     storageBucket: "loginpage-6621d.firebasestorage.app",
@@ -154,4 +154,5 @@ signIn.addEventListener('click', (event) => {
             showMessage('Geçersiz hesap', 'signInMessage');
         }
     });
+
 });
